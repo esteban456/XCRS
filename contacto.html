@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto | Apple Style</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: #0b0b0f;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* contenedor */
+.container {
+    width: 100%;
+    max-width: 900px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 40px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+/* título */
+h1 {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #b3b3b3;
+    margin-bottom: 30px;
+}
+
+/* grid formulario */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* inputs */
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.08);
+}
+
+/* textarea grande */
+textarea {
+    grid-column: span 2;
+    height: 150px;
+    resize: none;
+}
+
+/* botón */
+button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: none;
+    background: white;
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.02);
+    background: #e5e5e5;
+}
+
+/* info */
+.info {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #888;
+    text-align: center;
+}
+
+/* responsive */
+@media (max-width: 700px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    textarea {
+        grid-column: span 1;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Contáctanos 📩</h1>
+    <p>Escríbenos tu mensaje. Te responderemos lo más rápido posible.</p>
+
+    <!-- FORMULARIO FORMSPREE -->
+    <form action="https://formspree.io/f/xvzynpar" method="POST">
+
+        <div class="form-grid">
+
+            <input type="text" name="nombre" placeholder="Nombre completo" required>
+
+            <input type="email" name="email" placeholder="Tu correo electrónico" required>
+
+            <input type="text" name="asunto" placeholder="Asunto">
+
+            <input type="text" name="empresa" placeholder="Empresa (opcional)">
+
+            <textarea name="message" placeholder="Escribe tu mensaje..." required></textarea>
+
+        </div>
+
+        <button type="submit">Enviar mensaje</button>
+
+    </form>
+
+    <div class="info">
+        Respuesta promedio: 24 - 48 horas ⏱️
+    </div>
+
+</div>
+
+</body>
+</html>
